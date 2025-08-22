@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import {
   Bars3Icon,
@@ -7,40 +7,45 @@ import {
   SunIcon,
   ChevronDownIcon,
   MagnifyingGlassIcon,
-} from "@heroicons/react/24/outline"
-import { useState } from "react"
+} from "@heroicons/react/24/outline";
+import { useState } from "react";
 
-export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode, setDarkMode }) {
-  const [showNotifications, setShowNotifications] = useState(false)
-  const [showProfile, setShowProfile] = useState(false)
-  const [showAppsDropdown, setShowAppsDropdown] = useState(false)
+export default function Header({
+  sidebarCollapsed,
+  setSidebarCollapsed,
+  darkMode,
+  setDarkMode,
+}) {
+  const [showNotifications, setShowNotifications] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
+  const [showAppsDropdown, setShowAppsDropdown] = useState(false);
 
   const toggleNotifications = () => {
-    if (showProfile) setShowProfile(false)
-    if (showAppsDropdown) setShowAppsDropdown(false)
-    setShowNotifications(!showNotifications)
-  }
+    if (showProfile) setShowProfile(false);
+    if (showAppsDropdown) setShowAppsDropdown(false);
+    setShowNotifications(!showNotifications);
+  };
 
   const toggleProfile = () => {
-    if (showNotifications) setShowNotifications(false)
-    if (showAppsDropdown) setShowAppsDropdown(false)
-    setShowProfile(!showProfile)
-  }
+    if (showNotifications) setShowNotifications(false);
+    if (showAppsDropdown) setShowAppsDropdown(false);
+    setShowProfile(!showProfile);
+  };
 
   const toggleAppsDropdown = () => {
-    if (showNotifications) setShowNotifications(false)
-    if (showProfile) setShowProfile(false)
-    setShowAppsDropdown(!showAppsDropdown)
-  }
+    if (showNotifications) setShowNotifications(false);
+    if (showProfile) setShowProfile(false);
+    setShowAppsDropdown(!showAppsDropdown);
+  };
 
   return (
-    <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-3 transition-colors duration-150">
+    <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 px-6 py-3 ">
       <div className="flex items-center justify-between">
         {/* Left side */}
         <div className="flex items-center space-x-6">
           <button
             onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-150"
+            className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             <Bars3Icon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
           </button>
@@ -52,7 +57,7 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
             <input
               type="text"
               placeholder="Search..."
-              className="block w-80 pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-150"
+              className="block w-80 pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
             />
           </div>
 
@@ -61,7 +66,7 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
             <div className="relative">
               <button
                 onClick={toggleAppsDropdown}
-                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-150"
+                className="flex items-center space-x-1 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
               >
                 <span>Apps</span>
                 <ChevronDownIcon className="w-4 h-4" />
@@ -101,19 +106,19 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
 
             <a
               href="#"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-150"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Chat
             </a>
             <a
               href="#"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-150"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Calendar
             </a>
             <a
               href="#"
-              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-150"
+              className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"
             >
               Email
             </a>
@@ -122,8 +127,12 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
 
         {/* Right side */}
         <div className="flex items-center space-x-3">
-          <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-150">
-            <img src="/placeholder.svg?height=20&width=20" alt="UK" className="w-5 h-5" />
+          <button className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+            <img
+              src="/placeholder.svg?height=20&width=20"
+              alt="UK"
+              className="w-5 h-5"
+            />
           </button>
 
           <button
@@ -141,7 +150,7 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
           <div className="relative">
             <button
               onClick={toggleNotifications}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 relative transition-colors duration-150"
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 relative"
             >
               <BellIcon className="w-5 h-5 text-gray-600 dark:text-gray-300" />
               <span className="absolute -top-1 -right-1 w-4 h-4 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center">
@@ -153,17 +162,41 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
               <div className="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
                 <div className="p-4 border-b border-gray-200 dark:border-gray-700">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Notifications</h3>
-                    <span className="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">3 new</span>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                      Notifications
+                    </h3>
+                    <span className="px-2 py-1 bg-blue-500 text-white text-xs rounded-full">
+                      3 new
+                    </span>
                   </div>
                 </div>
                 <div className="max-h-96 overflow-y-auto">
                   {[
-                    { name: "Roman", action: "Joined thes Team!", desc: "Congratulate him" },
-                    { name: "New message", action: "received", desc: "Salma sent you new message" },
-                    { name: "New Payment", action: "received", desc: "Check your earnings" },
-                    { name: "Jolly", action: "completed tasks", desc: "Assign her new tasks" },
-                    { name: "Roman", action: "Joined the Team!", desc: "Congratulatse him" },
+                    {
+                      name: "Roman",
+                      action: "Joined thes Team!",
+                      desc: "Congratulate him",
+                    },
+                    {
+                      name: "New message",
+                      action: "received",
+                      desc: "Salma sent you new message",
+                    },
+                    {
+                      name: "New Payment",
+                      action: "received",
+                      desc: "Check your earnings",
+                    },
+                    {
+                      name: "Jolly",
+                      action: "completed tasks",
+                      desc: "Assign her new tasks",
+                    },
+                    {
+                      name: "Roman",
+                      action: "Joined the Team!",
+                      desc: "Congratulatse him",
+                    },
                   ].map((notification, index) => (
                     <div
                       key={index}
@@ -179,7 +212,9 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
                           <p className="text-sm font-medium text-gray-900 dark:text-white">
                             {notification.name} {notification.action}
                           </p>
-                          <p className="text-sm text-gray-500 dark:text-gray-400">{notification.desc}</p>
+                          <p className="text-sm text-gray-500 dark:text-gray-400">
+                            {notification.desc}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -198,16 +233,22 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
           <div className="relative">
             <button
               onClick={toggleProfile}
-              className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-150"
+              className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
             >
-              <img src="/placeholder.svg?height=32&width=32" alt="Profile" className="w-8 h-8 rounded-full" />
+              <img
+                src="/placeholder.svg?height=32&width=32"
+                alt="Profile"
+                className="w-8 h-8 rounded-full"
+              />
               <ChevronDownIcon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
             </button>
 
             {showProfile && (
               <div className="absolute right-0 mt-2 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 z-50">
                 <div className="p-6">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">User Profile</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+                    User Profile
+                  </h3>
 
                   <div className="flex items-center space-x-4 mb-6">
                     <img
@@ -216,9 +257,15 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
                       className="w-15 h-15 rounded-full"
                     />
                     <div>
-                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">Mathew Anderson</h4>
-                      <p className="text-gray-500 dark:text-gray-400">Designer</p>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">info@modernize.com</p>
+                      <h4 className="text-lg font-medium text-gray-900 dark:text-white">
+                        Mathew Anderson
+                      </h4>
+                      <p className="text-gray-500 dark:text-gray-400">
+                        Designer
+                      </p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        info@modernize.com
+                      </p>
                     </div>
                   </div>
 
@@ -228,8 +275,12 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
                         <div className="w-4 h-4 bg-blue-500 rounded"></div>
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900 dark:text-white">My Profile</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Account Settings</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          My Profile
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          Account Settings
+                        </p>
                       </div>
                     </div>
 
@@ -238,8 +289,12 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
                         <div className="w-4 h-4 bg-purple-500 rounded"></div>
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900 dark:text-white">My Inbox</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">Messages & Email</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          My Inbox
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          Messages & Email
+                        </p>
                       </div>
                     </div>
 
@@ -248,15 +303,23 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
                         <div className="w-4 h-4 bg-green-500 rounded"></div>
                       </div>
                       <div>
-                        <p className="font-medium text-gray-900 dark:text-white">My Tasks</p>
-                        <p className="text-sm text-gray-500 dark:text-gray-400">To-do and Daily Tasks</p>
+                        <p className="font-medium text-gray-900 dark:text-white">
+                          My Tasks
+                        </p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400">
+                          To-do and Daily Tasks
+                        </p>
                       </div>
                     </div>
                   </div>
 
                   <div className="bg-gradient-to-r from-purple-400 to-blue-400 rounded-lg p-4 mb-4">
-                    <h4 className="text-white font-semibold mb-2">Unlimited Access</h4>
-                    <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium">Upgrade</button>
+                    <h4 className="text-white font-semibold mb-2">
+                      Unlimited Access
+                    </h4>
+                    <button className="bg-white text-blue-600 px-4 py-2 rounded-lg font-medium">
+                      Upgrade
+                    </button>
                   </div>
 
                   <button className="w-full py-2 text-blue-600 dark:text-blue-400 text-sm font-medium border border-blue-600 dark:border-blue-400 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-900">
@@ -269,5 +332,5 @@ export default function Header({ sidebarCollapsed, setSidebarCollapsed, darkMode
         </div>
       </div>
     </header>
-  )
+  );
 }

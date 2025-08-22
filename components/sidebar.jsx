@@ -34,7 +34,7 @@ const navigationItems = [
         id: "analytical",
         label: "Analytical",
         icon: ChartBarIcon,
-        highlight: true,
+        highlight: false,
       },
       { id: "ecommerce", label: "eCommerce", icon: ShoppingCartIcon },
       {
@@ -183,7 +183,7 @@ export default function Sidebar({ collapsed, currentPage, setCurrentPage }) {
     <div
       className={`${
         collapsed ? "w-16" : "w-64"
-      } bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 transition-all duration-100 flex flex-col`}
+      } bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700   flex flex-col`}
     >
       {/* Logo */}
       <div className="p-4 border-b border-gray-200 dark:border-gray-700">
@@ -228,7 +228,7 @@ export default function Sidebar({ collapsed, currentPage, setCurrentPage }) {
                 <div key={item.id}>
                   <button
                     onClick={() => handleNavigation(item)}
-                    className={`w-full flex items-center px-4 py-2 text-sm font-medium transition-colors ${
+                    className={`w-full flex items-center px-4 py-2 text-sm font-medium ${
                       currentPage === item.id
                         ? "bg-blue-600 text-white"
                         : item.disabled
@@ -273,7 +273,7 @@ export default function Sidebar({ collapsed, currentPage, setCurrentPage }) {
                         <button
                           key={submenuItem.id}
                           onClick={() => handleNavigation(item, submenuItem)}
-                          className={`w-full flex items-center px-4 py-2 text-sm transition-colors ${
+                          className={`w-full flex items-center px-4 py-2 text-sm ${
                             currentPage === submenuItem.id
                               ? "bg-blue-100 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
                               : "text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700/50 hover:text-gray-900 dark:hover:text-white"
