@@ -183,7 +183,7 @@ export default function Sidebar({ collapsed, currentPage, setCurrentPage }) {
     <div
       className={`${
         collapsed ? "w-16" : "w-64"
-      } bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 transition-all duration-150 flex flex-col`}
+      } bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-700 transition-all duration-100 flex flex-col`}
     >
       {/* Logo */}
       <div className="p-4 border-b border-gray-200 dark:border-gray-700">
